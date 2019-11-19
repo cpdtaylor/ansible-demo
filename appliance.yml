@@ -1,0 +1,27 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Download Morpheus Package for Ubuntu
+      get_url:
+        url:  https://downloads.gomorpheus.com/files/morpheus-appliance_3.6.4-1_amd64.deb
+        dest: /tmp/morpheus-appliance_3.6.4-1_amd64.deb
+        checksum: sha256:6c6d9aa49fe3e7bbad1ab6e5c51d0e38f4945a23a2791a8e1f3b60fc07878f3a
+    - name: Install Appliance On Ubuntu
+      apt:
+        deb: /tmp/morpheus-appliance_3.6.4-1_amd64.deb
+    - name: Updating Morpheus.rb
+      lineinfile:
+        path: /etc/morpheus/morpheus.rb
+        regexp: '^appliance_url'
+        line: appliance_url  'https://{{ morpheus['container']['internalIp'] }}'
+    - name: Reconfigure appliance
+      command: morpheus-ctl reconfigure
+    - name: Adding neo
+      user:
+        name: neo
+        password: "{{ lookup('cypher','secret=password/wpdb') }}"
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+        state: present

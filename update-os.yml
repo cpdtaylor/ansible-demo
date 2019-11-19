@@ -1,0 +1,19 @@
+---
+- hosts: all
+  gather_facts: true
+  become: true
+  tasks:
+  - name: Updating Ubuntu
+    apt:
+      name: "*"
+      state: latest
+   tags: update-os
+  - name: Install tool-kit
+    apt:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - htop
+      - mosh
+      - tmux
+    tags: install-tools
