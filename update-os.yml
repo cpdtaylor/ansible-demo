@@ -7,7 +7,6 @@
     apt:
       name: "*"
       state: latest
-   tags: update-os
   - name: Install tool-kit
     apt:
       name: "{{ packages }}"
@@ -16,4 +15,3 @@
       - htop
       - mosh
       - tmux
-    tags: install-tools
