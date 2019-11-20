@@ -1,0 +1,7 @@
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create a file called '/tmp/fruit.txt' that contains custom option data provided in an operational workflow.
+      copy:
+        content: "My favourite fruit is {{ morpheus['customOptions']['bestFruit'] }} but I also like {{ morpheus['customOptions']['selectFruit'] }}"
+        dest: /tmp/fruit.txt
