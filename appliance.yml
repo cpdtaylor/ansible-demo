@@ -15,8 +15,6 @@
         path: /etc/morpheus/morpheus.rb
         regexp: '^appliance_url'
         line: appliance_url  'https://{{ morpheus['container']['internalIp'] }}'
-    - name: Reconfigure appliance
-      command: morpheus-ctl reconfigure
     - name: Adding neo
       user:
         name: neo
