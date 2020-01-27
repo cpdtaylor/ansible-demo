@@ -6,8 +6,8 @@
   become_method: sudo
   tasks:
   - name: Install package
-    apt-get:
-      name: httpd
+    apt:
+      name: apache2
       state: present
   - name: ensure apache2 is running
     service:
