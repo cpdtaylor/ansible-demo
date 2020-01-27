@@ -11,5 +11,5 @@
       state: present
   - name: ensure apache2 is running
     service:
-      name: httpd
+      name: apache2
       state: started
