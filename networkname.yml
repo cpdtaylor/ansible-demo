@@ -1,0 +1,7 @@
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create a file called '/tmp/network.txt' that contains name of network provisioned.
+      copy:
+        content: "Name of network: {{ morpheus['container']['networkInterfaces'][0]['network']['name'] }} "
+        dest: /tmp/network.txt
