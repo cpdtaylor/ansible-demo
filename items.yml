@@ -1,1 +1,12 @@
 
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create a file called '/tmp/items.txt' that contains items.
+      copy:
+        content: "{{ item }}"
+        dest: /tmp/items.txt
+      with_items:
+      - 1
+      - 2
+      - 3
