@@ -4,7 +4,7 @@
   tasks:
     - name: Create a file called '/tmp/items.txt' that contains items.
       copy:
-        content: "{{ item }}"
+        content: "{{ itemaaaaaaaa }}"
         dest: /tmp/items.txt
       with_items:
       - 1
