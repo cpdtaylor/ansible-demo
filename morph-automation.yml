@@ -1,1 +1,7 @@
-
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create a file called '/tmp/morph-automation' that contains morph-automation access token for the current user.
+      copy:
+        content: "The Morpheus Automation Client access code is {{ morpheus['apiAccessToken'] }}"
+        dest: /tmp/morph-access-token.txt
