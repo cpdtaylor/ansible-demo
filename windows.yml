@@ -6,5 +6,5 @@
     - name: Add User
       win_user:
         name: pete
-        password: "Pete_jones!123"
+        password: "peterJones123"
         state: present
