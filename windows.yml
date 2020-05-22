@@ -6,5 +6,5 @@
     - name: Add User
       win_user:
         name: pete
-        password: peterJones123
+        password: "{{ lookup('cypher','secret=password/10/aapassword') }}"
         state: present
