@@ -6,3 +6,4 @@
       msg:
       - "Hello WOrld"
       - "Test Extra Var: '{{ extra_var_test }}'."
+      - "Test Extra Var: '{{ morpheus['container']['name'] }}'."
