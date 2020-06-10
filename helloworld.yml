@@ -2,4 +2,4 @@
 - hosts: all
   tasks:
   - name: Print Hello World
-    debug: msg="Hello World. Container name: {{ morpheus['container']['name'] }}. Extra Var: {{ extra_var_test }}"
+    debug: msg=Hello World. Container name: {{ morpheus['container']['name'] }}. Extra Var: {{ extra_var_test }}
