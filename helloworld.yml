@@ -1,5 +1,9 @@
 ---
 - hosts: all
+  remote_user: ctaylor
+  become: yes
+  become_user: root
+  become_method: sudo
   tasks:
   - name: Print Hello World
     debug:
