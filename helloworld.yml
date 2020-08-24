@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  vars:
+    Opensource_Team: "Customer"
   tasks:
   - name: Print Hello World
     debug:
