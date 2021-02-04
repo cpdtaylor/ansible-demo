@@ -6,4 +6,4 @@
   - name: Print Hello World
     debug:
       msg:
-      - "Hello World {{ team_name }}"
+      - "Hello World"
