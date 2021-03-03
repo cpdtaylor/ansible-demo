@@ -6,4 +6,4 @@
   - name: Print Hello World
     debug:
       msg:
-      - "Hello World"
+      - "Hello World {{ Opensource_Team }}"
