@@ -1,4 +1,4 @@
 ---
-  tasks:
-    - debug:
-        msg: "{{ morpheus }}"
+- tasks:
+  - debug:
+      msg: "{{ morpheus }}"
