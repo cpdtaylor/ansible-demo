@@ -1,4 +1,5 @@
 ---
-- tasks:
-  - debug:
-      msg: "{{ morpheus }}"
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: "{{ morpheus }}"
